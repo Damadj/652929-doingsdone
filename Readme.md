@@ -1,7 +1,7 @@
 # Личный проект «Дела в Порядке»
 
 * Студент: [Alexander Chekrzhov](https://up.htmlacademy.ru/php/5/user/652929).
-* Наставник: `Неизвестно`.
+* Наставник: [Денис Байдаров](https://htmlacademy.ru/profile/id7956).
 
 ---
 
