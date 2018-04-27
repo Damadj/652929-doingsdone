@@ -96,10 +96,7 @@ $show_complete_tasks = rand(0, 1);
                     </nav>
 
                     <label class="checkbox">
-                        <input class="checkbox__input visually-hidden show_completed" type="checkbox">
-                        <? if ($show_complete_tasks == 1): ?>
-                          <input class="checkbox__input visually-hidden show_completed" type="checkbox" checked>
-                        <? endif ?>
+                        <input class="checkbox__input visually-hidden show_completed" type="checkbox" <? if ($show_complete_tasks == 1): ?> checked <? endif; ?> >
                         <span class="checkbox__text">Показывать выполненные</span>
                     </label>
                 </div>
@@ -132,7 +129,7 @@ $show_complete_tasks = rand(0, 1);
                         <td class="task__controls">
                         </td>
                       </tr>
-                    <? endif ?>
+                    <? endif; ?>
 
                     <tr class="tasks__item task task--completed">
                         <td class="task__select">
