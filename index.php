@@ -40,17 +40,22 @@ $tasks = [
     'completed' => False
   ]
 ];
-$name = 'Все';
-function project_count ($array, $name) {
-    foreach($array as $key => $task) {
-        if ($name = 'Все') {
-            print "<p>$task[0]</p>";
+
+function project_count($array, $name) {
+    $amount = 0;
+    if ($name == 'Все') {
+        $amount = count($array);
+    }
+    else {
+        foreach ($array as $value) {
+            if ($name == $value['categories']) {
+                $amount = $amount +1;
+            }
         }
     }
-
     return $amount;
 }
-$result = project_count($tasks, $name);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -100,8 +105,7 @@ $result = project_count($tasks, $name);
                       <? foreach ($categories as $key => $item): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link <? if ($key == 0): ?>main-navigation__list-item--active<? endif; ?>" href="#"><?=$item?></a>
-                            <span class="main-navigation__list-item-count">
-                            </span>
+                            <span class="main-navigation__list-item-count"><?php $result = project_count($tasks, $item); echo($result); ?></span>
                         </li>
                       <? endforeach; ?>
                     </ul>
@@ -136,7 +140,7 @@ $result = project_count($tasks, $name);
 
                 <table class="tasks">
                     <? foreach ($tasks as $val): ?>
-                    <tr class="tasks__item task <? if ($val['completed'] == true): ?>task--completed<? endif; ?>">
+                    <tr class="tasks__item task <? if ($val['completed']): ?>task--completed<? endif; ?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
