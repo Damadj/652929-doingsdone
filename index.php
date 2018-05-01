@@ -48,8 +48,8 @@ function project_count($array, $name) {
     }
     else {
         foreach ($array as $value) {
-            if ($name == $value['categories']) {
-                $amount = $amount +1;
+            if ($value['categories'] == $name) {
+                $amount++;
             }
         }
     }
@@ -105,7 +105,7 @@ function project_count($array, $name) {
                       <? foreach ($categories as $key => $item): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link <? if ($key == 0): ?>main-navigation__list-item--active<? endif; ?>" href="#"><?=$item?></a>
-                            <span class="main-navigation__list-item-count"><?php $result = project_count($tasks, $item); echo($result); ?></span>
+                            <span class="main-navigation__list-item-count"><?php echo(project_count($tasks, $item)); ?></span>
                         </li>
                       <? endforeach; ?>
                     </ul>
