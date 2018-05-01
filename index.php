@@ -126,7 +126,7 @@ $tasks = [
 
                 <table class="tasks">
                     <? foreach ($tasks as $val): ?>
-                    <tr class="tasks__item task <? if ($val['completed'] == true): ?>task--completed<? endif; ?>">
+                    <tr class="tasks__item task <? if ($val['completed']): ?>task--completed<? endif; ?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
