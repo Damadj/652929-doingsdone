@@ -7,37 +7,37 @@ $tasks = [
     'title' => 'Собеседование в IT компании',
     'end_date' => '01.06.2018',
     'categories' => 'Работа',
-    'completed' => 'Нет'
+    'completed' => False
   ],
   [
     'title' => 'Выполнить тестовое задание',
     'end_date' => '25.05.2018',
     'categories' => 'Работа',
-    'completed' => 'Нет'
+    'completed' => False
   ],
   [
     'title' => 'Сделать задание первого раздела',
     'end_date' => '21.04.2018',
     'categories' => 'Учеба',
-    'completed' => 'Да'
+    'completed' => True
   ],
   [
     'title' => 'Встреча с другом',
     'end_date' => '22.04.2018',
     'categories' => 'Входящие',
-    'completed' => 'Нет'
+    'completed' => False
   ],
   [
     'title' => 'Купить корм для кота',
     'end_date' => 'Нет',
     'categories' => 'Домашние дела',
-    'completed' => 'Нет'
+    'completed' => False
   ],
   [
     'title' => 'Заказать пиццу',
     'end_date' => 'Нет',
     'categories' => 'Домашние дела',
-    'completed' => 'Нет'
+    'completed' => False
   ]
 ];
 
@@ -90,7 +90,8 @@ $tasks = [
                       <? foreach ($categories as $key => $item): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link <? if ($key == 0): ?>main-navigation__list-item--active<? endif; ?>" href="#"><?=$item?></a>
-                            <span class="main-navigation__list-item-count">7</span>
+                            <span class="main-navigation__list-item-count">
+                            </span>
                         </li>
                       <? endforeach; ?>
                     </ul>
@@ -125,7 +126,7 @@ $tasks = [
 
                 <table class="tasks">
                     <? foreach ($tasks as $val): ?>
-                    <tr class="tasks__item task <? if ($val['completed'] == 'Да'): ?>task--completed<? endif; ?>">
+                    <tr class="tasks__item task <? if ($val['completed'] == true): ?>task--completed<? endif; ?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
@@ -138,9 +139,6 @@ $tasks = [
                         </td>
                         <td class="task__date">
                             <?=$val['categories']?>
-                        </td>
-                        <td class="task__controls">
-                            <?=$val['completed']?>
                         </td>
                     </tr>
                     <? endforeach; ?>
