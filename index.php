@@ -41,6 +41,22 @@ $tasks = [
   ]
 ];
 
+
+function project_count($array, $name) {
+    $amount = 0;
+    if ($name == 'Все') {
+        $amount = count($array);
+    }
+    else {
+        foreach ($array as $value) {
+            if ($value['categories'] == $name) {
+                $amount++;
+            }
+        }
+    }
+    return $amount;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -90,8 +106,9 @@ $tasks = [
                       <? foreach ($categories as $key => $item): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link <? if ($key == 0): ?>main-navigation__list-item--active<? endif; ?>" href="#"><?=$item?></a>
-                            <span class="main-navigation__list-item-count">
-                            </span>
+
+                            <span class="main-navigation__list-item-count"><?=project_count($tasks, $item); ?></span>
+
                         </li>
                       <? endforeach; ?>
                     </ul>
