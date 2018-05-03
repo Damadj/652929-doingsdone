@@ -41,6 +41,7 @@ $tasks = [
   ]
 ];
 
+
 function project_count($array, $name) {
     $amount = 0;
     if ($name == 'Все') {
@@ -105,7 +106,9 @@ function project_count($array, $name) {
                       <? foreach ($categories as $key => $item): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link <? if ($key == 0): ?>main-navigation__list-item--active<? endif; ?>" href="#"><?=$item?></a>
+
                             <span class="main-navigation__list-item-count"><?=project_count($tasks, $item); ?></span>
+
                         </li>
                       <? endforeach; ?>
                     </ul>
