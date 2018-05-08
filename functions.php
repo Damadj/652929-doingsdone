@@ -7,15 +7,11 @@ function include_template($path, $data) {
         $result = ob_get_clean();
     }
     else {
-        echo('path does not exist');
+        $result = "";
     }
     return $result;
 }
 
-function esc($str) {
-    $text = htmlspecialchars($str);
-    return $text;
-}
 
 function project_count($array, $name) {
     $amount = 0;

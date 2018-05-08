@@ -26,15 +26,15 @@
             <td class="task__select">
                 <label class="checkbox task__checkbox">
                     <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                    <span class="checkbox__text"><?=esc($val['title'])?></span>
+                    <span class="checkbox__text"><?=htmlspecialchars($val['title'])?></span>
                 </label>
             </td>
 
             <td class="task__file">
-                <?=esc($val['end_date'])?>
+                <?=htmlspecialchars($val['end_date'])?>
             </td>
             <td class="task__date">
-                <?=esc($val['categories'])?>
+                <?=htmlspecialchars($val['categories'])?>
             </td>
         </tr>
     <? endforeach; ?>
