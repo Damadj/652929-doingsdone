@@ -22,7 +22,9 @@
 
 <table class="tasks">
     <? foreach ($tasks as $val): ?>
-        <tr class="tasks__item task <? if ($val['completed']): ?>task--completed<? endif; ?>">
+        <?php $last_date = floor((strtotime(htmlspecialchars($val['end_date'])) - time()) / 3600); ?>
+
+        <tr class="tasks__item task <? if ($val['completed']): ?>task--completed<? endif; ?> <? if ($last_date <= 24 && $val['end_date'] != false && $val['completed'] != true): ?>task--important<? endif; ?>">
             <td class="task__select">
                 <label class="checkbox task__checkbox">
                     <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
