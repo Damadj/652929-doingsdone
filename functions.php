@@ -28,4 +28,13 @@ function project_count($array, $name) {
     return $amount;
 }
 
+
+function time_alert($end_date, $completed) {
+    $important = "";
+    $last_date = floor((strtotime(htmlspecialchars($end_date)) - time()) / 3600);
+    if ($last_date <= 24 && $end_date != false && $completed != true) {
+        $important = ('task--important');
+    }
+    return $important;
+}
 ?>
