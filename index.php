@@ -28,16 +28,17 @@ $tasks = [
   ],
   [
     'title' => 'Купить корм для кота',
-    'end_date' => 'Нет',
+    'end_date' => False,
     'categories' => 'Домашние дела',
     'completed' => False
   ],
   [
     'title' => 'Заказать пиццу',
-    'end_date' => 'Нет',
+    'end_date' => False,
     'categories' => 'Домашние дела',
     'completed' => False
   ]
+
 ];
 
 
