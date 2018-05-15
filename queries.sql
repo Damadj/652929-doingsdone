@@ -17,7 +17,7 @@ ON c.user_id = u.id
 WHERE c.user_id = 1;
 
 /* получить список из всех задач для одного проекта; */
-SELECT task_name, project_id FROM tasks t
+SELECT t.id, task_name, project FROM tasks t
 JOIN categories c
 ON t.project_id = c.id
 WHERE t.project_id = 4;
