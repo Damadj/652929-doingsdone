@@ -9,17 +9,17 @@ CREATE DATABASE doingsdone
   );
   CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    creation_date INT,
-    completion_date INT,
+    creation_date DATE,
+    completion_date DATE,
     task_name CHAR(128),
     file_link CHAR(128),
-    time_limit INT,
+    time_limit DATE,
     user_id INT,
     project_id INT
   );
   CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    registration_date INT,
+    registration_date DATE,
     email CHAR(128),
     user_name CHAR(64),
     password CHAR(64),
