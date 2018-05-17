@@ -20,7 +20,7 @@ function project_count($array, $name) {
     }
     else {
         foreach ($array as $value) {
-            if ($value['categories'] == $name) {
+            if ($value['project'] == $name) {
                 $amount++;
             }
         }

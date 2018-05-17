@@ -5,10 +5,10 @@ INSERT INTO users (registration_date, email, user_name, password, contact)
           ('2017-09-03', 'user2@email.com', 'User2', 'PASS', 'user2_skype');
 INSERT INTO tasks (creation_date, completion_date, task_name, file_link, time_limit, user_id, project_id)
     VALUE ('2018-04-05', NULL, 'Собеседование в IT компании', NULL, '2018-06-01', 2, 3),
-          ('2018-04-19', NULL, 'Выполнить тестовое задание', NULL, '2018-05-25', 1, 3),
+          ('2018-04-19', NULL, 'Выполнить тестовое задание', NULL, '2018-05-25', 2, 3),
           ('2018-06-01', NULL, 'Сделать задание первого раздела', NULL, '2018-04-21', 2, 2),
-          ('2018-04-18', NULL, 'Встреча с другом', NULL, '2018-04-22', 1, 1),
-          ('2018-03-01', NULL, 'Купить корм для кота', NULL, NULL, 2, 4),
+          ('2018-04-18', NULL, 'Встреча с другом', NULL, '2018-04-22', 2, 1),
+          ('2018-03-01', NULL, 'Купить корм для кота', NULL, NULL, 1, 4),
           ('2018-03-05', NULL, 'Заказать пиццу', NULL, NULL, 1, 4);
 
 /* получить список из всех проектов для одного пользователя; */

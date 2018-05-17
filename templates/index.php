@@ -23,19 +23,19 @@
 <table class="tasks">
     <? foreach ($tasks as $val): ?>
 
-        <tr class="tasks__item task <? if ($val['completed']): ?>task--completed<? endif; ?> <?=time_alert($val['end_date'], $val['completed'])  ?>">
+        <tr class="tasks__item task <? if ($val['completion_date']): ?>task--completed<? endif; ?> <?=time_alert($val['time_limit'], $val['completion_date'])  ?>">
             <td class="task__select">
                 <label class="checkbox task__checkbox">
                     <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                    <span class="checkbox__text"><?=htmlspecialchars($val['title'])?></span>
+                    <span class="checkbox__text"><?=htmlspecialchars($val['task_name'])?></span>
                 </label>
             </td>
 
             <td class="task__file">
-                <?=htmlspecialchars($val['end_date'])?>
+                <?=htmlspecialchars($val['time_limit'])?>
             </td>
             <td class="task__date">
-                <?=htmlspecialchars($val['categories'])?>
+                <?=htmlspecialchars($val['project'])?>
             </td>
         </tr>
     <? endforeach; ?>
