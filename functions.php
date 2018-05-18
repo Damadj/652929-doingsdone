@@ -37,4 +37,12 @@ function time_alert($end_date, $completed) {
     }
     return $important;
 }
+
+
+function sql_array($connect, $sql) {
+    $query = mysqli_query($connect, $sql);
+    $array = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+    return $array;
+}
 ?>
