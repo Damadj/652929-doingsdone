@@ -9,8 +9,8 @@ if ($con == false) {
 else {
     $user_id = 2;
     $project_id = 3;
-    $categories = sql_array($con, "SELECT c.id, project, user_name FROM categories c JOIN users u ON c.user_id = u.id WHERE c.user_id = $user_id;");
-    $tasks = sql_array($con, "SELECT t.id, task_name, project, time_limit, completion_date FROM tasks t JOIN categories c ON t.project_id = c.id WHERE t.project_id = $project_id AND completion_date IS NULL;");
+    $categories = projects_list_for_user($con, $user_id);
+    $tasks = tasks_list_for_project($con, $project_id);
 }
 
 
