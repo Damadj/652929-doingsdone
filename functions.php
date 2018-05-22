@@ -49,12 +49,10 @@ function get_projects_list($connect, $user_id) {
 
 function get_tasks_list($connect, $project_id, $user_id, $show_complete_tasks) {
     $sql = "SELECT t.id, task_name, project, time_limit, completion_date FROM tasks t JOIN categories c ON t.project_id = c.id WHERE t.project_id = $project_id AND t.user_id = $user_id";
-    if ($show_complete_tasks == 1) {
-        $sql;
-    }
-    else {
+    if ($show_complete_tasks == 0) {
         $sql = $sql . " AND completion_date IS NULL";
     }
+
         $query = mysqli_query($connect, $sql);
         $array = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
