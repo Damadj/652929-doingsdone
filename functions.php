@@ -52,11 +52,8 @@ function get_tasks_list($connect, $project_id, $user_id, $show_complete_tasks) {
     $sql = "SELECT t.id, task_name, project, time_limit, completion_date FROM tasks t JOIN categories c ON t.project_id = c.id WHERE t.user_id = $user_id";
     if ($project_id) {
         $sql = $sql . " AND t.project_id = $project_id";
-        if ($show_complete_tasks == 0) {
-            $sql = $sql . " AND completion_date IS NULL";
-        }
     }
-    else if ($show_complete_tasks == 0) {
+    if ($show_complete_tasks == 0) {
         $sql = $sql . " AND completion_date IS NULL";
     }
 
